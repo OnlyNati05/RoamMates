@@ -34,10 +34,10 @@ export default function ChatConversationPage() {
     return () => { active = false; };
   }, [authLoading, router, user, userId]);
 
-  if (loading || authLoading) return <PageLoader message="Opening conversation" description="Connecting to your secure founder chat." />;
+  if (loading || authLoading) return <PageLoader message="Opening conversation" description="Connecting to your secure trip chat." />;
 
   if (!otherUser) return (
-    <main className="flex min-h-dvh items-center justify-center bg-[#080b16] px-5 pt-20 text-white"><div className="max-w-md rounded-3xl border border-slate-800 bg-slate-900 p-9 text-center"><span className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-red-500/10 text-red-400"><MessageCircleOff className="h-8 w-8" /></span><h1 className="mt-6 text-2xl font-semibold">Conversation unavailable</h1><p className="mt-3 leading-7 text-slate-400">This founder isn’t in your matches or the conversation no longer exists.</p><button onClick={() => router.replace("/chat")} className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-xl bg-violet-600 px-5 font-semibold hover:bg-violet-500"><ArrowLeft className="h-4 w-4" /> Back to messages</button></div></main>
+    <main className="flex min-h-dvh items-center justify-center bg-[#080b16] px-5 pt-20 text-white"><div className="max-w-md rounded-3xl border border-slate-800 bg-slate-900 p-9 text-center"><span className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-red-500/10 text-red-400"><MessageCircleOff className="h-8 w-8" /></span><h1 className="mt-6 text-2xl font-semibold">Conversation unavailable</h1><p className="mt-3 leading-7 text-slate-400">This traveler isn’t in your matches or the conversation no longer exists.</p><button onClick={() => router.replace("/chat")} className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-xl bg-violet-600 px-5 font-semibold hover:bg-violet-500"><ArrowLeft className="h-4 w-4" /> Back to messages</button></div></main>
   );
 
   return (

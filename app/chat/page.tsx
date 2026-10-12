@@ -1,7 +1,6 @@
 "use client";
 
 import { UserProfile } from "@/app/profile/page";
-import PageLoader from "@/components/PageLoader";
 import { getUserMatches } from "@/lib/actions/matches";
 import { ArrowRight, MessageCircle, Search, Sparkles } from "lucide-react";
 import Link from "next/link";
@@ -71,10 +70,10 @@ export default function ChatPage() {
             Inbox
           </p>
           <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
-            Founder conversations
+            Trip conversations
           </h1>
           <p className="mt-2 text-slate-400">
-            Keep the conversation moving from introduction to idea.
+            Compare plans, swap ideas, and see if you travel well together.
           </p>
         </header>
 
@@ -106,14 +105,14 @@ export default function ChatPage() {
                 No conversations yet
               </h2>
               <p className="mx-auto mt-3 max-w-md leading-7 text-slate-400">
-                Match with a founder, then come back here to start building
-                rapport.
+                Match with a traveler, then come back here to compare plans
+                and get to know each other.
               </p>
               <Link
                 href="/matches"
                 className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-xl bg-violet-600 px-5 font-semibold hover:bg-violet-500"
               >
-                <Sparkles className="h-4 w-4" /> Discover founders
+                <Sparkles className="h-4 w-4" /> Discover travelers
               </Link>
             </div>
           ) : filteredChats.length === 0 ? (

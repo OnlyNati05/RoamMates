@@ -14,10 +14,9 @@ import {
   EyeOff,
   Lock,
   Mail,
+  Plane,
   ShieldCheck,
-  Zap,
 } from "lucide-react";
-import PageLoader from "@/components/PageLoader";
 
 export default function AuthPage() {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -80,71 +79,67 @@ export default function AuthPage() {
 
   if (authLoading || user) {
     return (
-      <div className="min-h-dvh bg-[#080b16] px-5 pb-16 pt-28 text-white sm:px-8 lg:pt-32"></div>
+      <div className="min-h-dvh bg-[#f6f1e7] px-5 pb-16 pt-28 text-[#123c38] sm:px-8 lg:pt-32"></div>
     );
   }
 
   return (
-    <main className="min-h-screen bg-[#080b16] px-4 pb-8 pt-24 text-white sm:px-6 sm:pb-12 sm:pt-28">
-      <div className="mx-auto grid min-h-[calc(100vh-8.5rem)] max-w-6xl overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-900 shadow-2xl shadow-black/30 lg:grid-cols-[.9fr_1.1fr]">
-        <aside className="relative hidden overflow-hidden bg-violet-600 p-10 lg:flex lg:flex-col lg:justify-between xl:p-14">
-          <div className="absolute -right-16 -top-16 h-52 w-52 rounded-full border-[34px] border-violet-500" />
-          <div className="absolute -bottom-20 -left-20 h-72 w-72 rounded-full border-[42px] border-blue-500/40" />
+    <main className="min-h-screen bg-[#f6f1e7] px-4 pb-8 pt-24 text-[#123c38] sm:px-6 sm:pb-12 sm:pt-28">
+      <div className="mx-auto grid min-h-[calc(100vh-8.5rem)] max-w-6xl overflow-hidden rounded-[2rem] border border-[#123c38]/15 bg-[#fffdf8] shadow-[0_28px_80px_rgba(28,60,54,.16)] lg:grid-cols-[.9fr_1.1fr]">
+        <aside className="relative hidden overflow-hidden bg-[#123c38] p-10 lg:flex lg:flex-col lg:justify-between xl:p-14">
+          <div className="absolute -right-16 -top-16 h-52 w-52 rounded-full border-[34px] border-[#2f6f68]" />
+          <div className="absolute -bottom-20 -left-20 h-72 w-72 rounded-full border-[42px] border-[#ef6f48]/40" />
 
           <div className="relative">
             <Link href="/" className="inline-flex items-center gap-3">
-              <div className=" rounded-lg overflow-hidden ">
-                <Image
-                  src="/colaunch_logo_white.png"
-                  alt=""
-                  width={1254}
-                  height={1254}
-                  className="size-8 object-cover"
-                />
-              </div>
-              <span className="text-xl font-bold">CoLaunch</span>
+              <span className="flex size-9 items-center justify-center rounded-full bg-[#ef6f48]">
+                <Plane className="h-5 w-5 -rotate-12" />
+              </span>
+              <span className="text-xl font-bold">RoamMates</span>
             </Link>
 
             <div className="mt-15">
-              <h1 className="mt-6 text-4xl font-semibold leading-tight tracking-[-0.035em] xl:text-5xl">
-                Big ideas are better with the right person beside you.
+              <h1 className="mt-6 text-4xl text-white font-semibold leading-tight tracking-[-0.035em] xl:text-5xl">
+                Some places are better with someone beside you.
               </h1>
-              <p className="mt-5 max-w-md text-lg leading-8 text-violet-100">
-                Join a focused community of ambitious people ready to turn ideas
-                into companies.
+              <p className="mt-5 max-w-md text-lg leading-8 text-white/65">
+                Meet compatible travelers, compare plans, and find the right
+                person for the road ahead.
               </p>
             </div>
           </div>
 
-          <div className="relative mt-12 rounded-2xl bg-violet-700 p-5">
+          <div className="relative mt-12 rounded-2xl bg-white/8 p-5">
             <div className="flex items-center gap-3">
               <div className="flex -space-x-2">
                 {[1, 2, 3].map((profileNumber) => (
                   <Image
                     key={profileNumber}
                     src={`/profile_images/pfp${profileNumber}.jpg`}
-                    alt={`CoLaunch community member ${profileNumber}`}
+                    alt={`RoamMates community member ${profileNumber}`}
                     width={36}
                     height={36}
-                    className="h-9 w-9 rounded-full border-2 border-violet-700 object-cover"
+                    className="h-9 w-9 rounded-full border-2 border-[#24534f] object-cover"
                   />
                 ))}
               </div>
               <div>
-                <p className="text-sm font-semibold">Built for builders</p>
-                <p className="mt-0.5 text-xs text-violet-200">
-                  Find your missing piece.
+                <p className="text-sm text-white font-semibold">
+                  Made for curious travelers
+                </p>
+                <p className="mt-0.5 text-xs text-white/55">
+                  Find someone going your way.
                 </p>
               </div>
             </div>
           </div>
         </aside>
 
-        <section className="relative flex items-center justify-center bg-[#0c101d] px-5 py-10 sm:px-10 lg:px-14 xl:px-20">
+        <section className="relative flex items-center justify-center bg-[#fffdf8] px-5 py-10 sm:px-10 lg:px-14 xl:px-20">
           <div className="w-full max-w-md">
             <Link
               href="/"
-              className="mb-9 inline-flex items-center gap-2 text-sm font-medium text-slate-400 transition hover:text-white lg:absolute lg:right-8 lg:top-8 lg:mb-0"
+              className="mb-9 inline-flex items-center gap-2 text-sm font-medium text-[#6d7d7b] transition hover:text-[#123c38] lg:absolute lg:right-8 lg:top-8 lg:mb-0"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to home
@@ -153,13 +148,13 @@ export default function AuthPage() {
             <div className="mb-8">
               <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                 {isSignUp
-                  ? "Start your founder journey"
-                  : "Sign in to CoLaunch"}
+                  ? "Start your next adventure"
+                  : "Sign in to RoamMates"}
               </h2>
-              <p className="mt-3 leading-7 text-slate-400">
+              <p className="mt-3 leading-7 text-[#657572]">
                 {isSignUp
-                  ? "Create a free account and meet people who are ready to build."
-                  : "Pick up where you left off and keep building momentum."}
+                  ? "Create a free account and meet people heading your way."
+                  : "Pick up where you left off and keep planning your trip."}
               </p>
             </div>
 
@@ -167,12 +162,12 @@ export default function AuthPage() {
               <div>
                 <label
                   htmlFor="email"
-                  className="mb-2 block text-sm font-semibold text-slate-200"
+                  className="mb-2 block text-sm font-semibold text-[#244b47]"
                 >
                   Email address
                 </label>
                 <div className="relative">
-                  <Mail className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-500" />
+                  <Mail className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-[#78908c]" />
                   <input
                     id="email"
                     name="email"
@@ -181,8 +176,8 @@ export default function AuthPage() {
                     required
                     value={email}
                     onChange={(event) => setEmail(event.target.value)}
-                    className="block min-h-14 w-full rounded-xl border border-slate-700 bg-slate-900 py-3.5 pl-12 pr-4 text-white outline-none transition placeholder:text-slate-600 hover:border-slate-600 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10"
-                    placeholder="you@company.com"
+                    className="block min-h-14 w-full rounded-xl border border-[#cfc7ba] bg-white py-3.5 pl-12 pr-4 text-[#123c38] outline-none transition placeholder:text-[#9aa5a2] hover:border-[#8da49f] focus:border-[#2f8278] focus:ring-4 focus:ring-[#2f8278]/10"
+                    placeholder="you@example.com"
                   />
                 </div>
               </div>
@@ -191,18 +186,18 @@ export default function AuthPage() {
                 <div className="mb-2 flex items-center justify-between">
                   <label
                     htmlFor="password"
-                    className="text-sm font-semibold text-slate-200"
+                    className="text-sm font-semibold text-[#244b47]"
                   >
                     Password
                   </label>
                   {!isSignUp && (
-                    <span className="text-xs font-medium text-slate-500">
+                    <span className="text-xs font-medium text-[#7a8b88]">
                       At least 6 characters
                     </span>
                   )}
                 </div>
                 <div className="relative">
-                  <Lock className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-500" />
+                  <Lock className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-[#78908c]" />
                   <input
                     id="password"
                     name="password"
@@ -214,13 +209,13 @@ export default function AuthPage() {
                     required
                     value={password}
                     onChange={(event) => setPassword(event.target.value)}
-                    className="block min-h-14 w-full rounded-xl border border-slate-700 bg-slate-900 py-3.5 pl-12 pr-12 text-white outline-none transition placeholder:text-slate-600 hover:border-slate-600 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10"
+                    className="block min-h-14 w-full rounded-xl border border-[#cfc7ba] bg-white py-3.5 pl-12 pr-12 text-[#123c38] outline-none transition placeholder:text-[#9aa5a2] hover:border-[#8da49f] focus:border-[#2f8278] focus:ring-4 focus:ring-[#2f8278]/10"
                     placeholder="Enter your password"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword((current) => !current)}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 transition hover:text-slate-200"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-[#78908c] transition hover:text-[#123c38]"
                     aria-label={
                       showPassword ? "Hide password" : "Show password"
                     }
@@ -237,17 +232,17 @@ export default function AuthPage() {
               {error && (
                 <div
                   role="alert"
-                  className="flex items-start gap-3 rounded-xl border border-red-500/25 bg-red-500/10 p-4"
+                  className="flex items-start gap-3 rounded-xl border border-[#cf5b3a]/25 bg-[#ef6f48]/10 p-4"
                 >
-                  <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-red-400" />
-                  <p className="text-sm leading-6 text-red-300">{error}</p>
+                  <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#cf5b3a]" />
+                  <p className="text-sm leading-6 text-[#9f3f26]">{error}</p>
                 </div>
               )}
 
               <button
                 type="submit"
                 disabled={loading}
-                className="group flex min-h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-violet-600 px-6 text-base font-bold text-white shadow-[0_10px_30px_rgba(124,58,237,0.2)] transition hover:-translate-y-0.5 hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2 focus:ring-offset-[#0c101d] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+                className="group flex min-h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#123c38] px-6 text-base font-bold text-white shadow-[0_10px_30px_rgba(18,60,56,0.2)] transition hover:-translate-y-0.5 hover:bg-[#0b2f2c] focus:outline-none focus:ring-2 focus:ring-[#2f8278] focus:ring-offset-2 focus:ring-offset-[#fffdf8] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
               >
                 {loading ? (
                   <>
@@ -264,20 +259,20 @@ export default function AuthPage() {
             </form>
 
             <div className="mt-7 flex items-center justify-center gap-1.5 text-sm">
-              <span className="text-slate-400">
-                {isSignUp ? "Already have an account?" : "New to CoLaunch?"}
+              <span className="text-[#657572]">
+                {isSignUp ? "Already have an account?" : "New to RoamMates?"}
               </span>
               <button
                 type="button"
                 onClick={toggleMode}
-                className="font-semibold text-violet-400 transition hover:text-violet-300"
+                className="font-semibold text-[#d75b36] transition hover:text-[#b94325]"
               >
                 {isSignUp ? "Sign in" : "Create an account"}
               </button>
             </div>
 
-            <p className="mt-8 flex items-center justify-center gap-2 text-center text-xs text-slate-500">
-              <ShieldCheck className="h-4 w-4 text-blue-400" />
+            <p className="mt-8 flex items-center justify-center gap-2 text-center text-xs text-[#7a8b88]">
+              <ShieldCheck className="h-4 w-4 text-[#2f8278]" />
               Your information stays private and secure.
             </p>
           </div>

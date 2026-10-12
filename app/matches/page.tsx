@@ -4,7 +4,6 @@ import { UserProfile } from "@/app/profile/page";
 import MatchButtons from "@/components/MatchButtons";
 import MatchCard from "@/components/MatchCard";
 import MatchNotification from "@/components/MatchNotification";
-import PageLoader from "@/components/PageLoader";
 import { getPotentialMatches, likeUser } from "@/lib/actions/matches";
 import { ArrowLeft, RefreshCw, Search, Sparkles, Users } from "lucide-react";
 import Link from "next/link";
@@ -77,13 +76,13 @@ export default function MatchesPage() {
             </button>
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-400">
-                Founder discovery
+                Travel companion discovery
               </p>
               <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
-                Find your counterpart
+                Find someone going your way
               </h1>
               <p className="mt-2 text-slate-400">
-                Review people selected around your founder preferences.
+                Meet travelers selected around your pace, plans, and preferences.
               </p>
             </div>
           </div>
@@ -104,8 +103,8 @@ export default function MatchesPage() {
               You’re all caught up
             </h2>
             <p className="mt-3 leading-7 text-slate-400">
-              You’ve reviewed every founder available right now. Check back soon
-              for new people.
+              You’ve reviewed every compatible traveler available right now. Check back soon
+              for new trip plans.
             </p>
             <button
               onClick={() => setCurrentIndex(0)}
@@ -121,8 +120,8 @@ export default function MatchesPage() {
               <Sparkles className="h-5 w-5 text-blue-400" />
               <p className="mt-4 text-sm font-semibold">Curated for you</p>
               <p className="mt-2 text-sm leading-6 text-slate-500">
-                Profiles are selected using your age, distance, and founder
-                preferences.
+                Profiles are selected using your age, home base, and travel
+                companion preferences.
               </p>
             </aside>
             <div>
@@ -153,8 +152,8 @@ export default function MatchesPage() {
                 A good first message
               </p>
               <p className="mt-3 text-sm leading-6 text-slate-400">
-                Mention something specific from their bio and share what made
-                you want to connect.
+                Ask about their next destination or mention a shared travel
+                interest from their bio.
               </p>
             </aside>
           </div>

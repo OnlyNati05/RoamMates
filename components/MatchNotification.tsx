@@ -52,7 +52,7 @@ export default function MatchNotification({
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                It's a Match! 🎉
+                Your trips align! ✈️
               </h3>
               <button
                 onClick={handleClose}
@@ -74,7 +74,7 @@ export default function MatchNotification({
 
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
               You and <span className="font-semibold">{match.full_name}</span>{" "}
-              liked each other!
+              both want to travel together!
             </p>
 
             <div className="flex space-x-2">

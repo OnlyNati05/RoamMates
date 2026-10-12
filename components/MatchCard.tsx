@@ -24,7 +24,7 @@ export default function MatchCard({ user }: { user: UserProfile }) {
           </div>
           <MapPin className="mt-1 h-5 w-5 shrink-0 text-slate-500" />
         </div>
-        <p className="mt-4 line-clamp-3 text-sm leading-6 text-slate-400">{user.bio || "This founder hasn’t added a bio yet."}</p>
+        <p className="mt-4 line-clamp-3 text-sm leading-6 text-slate-400">{user.bio || "This traveler hasn’t shared their travel style yet."}</p>
       </div>
     </article>
   );

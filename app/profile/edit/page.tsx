@@ -62,8 +62,8 @@ export default function EditProfilePage() {
         <button onClick={() => router.back()} className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-slate-400 transition hover:text-white"><ArrowLeft className="h-4 w-4" /> Back to profile</button>
         <div className="mb-8">
           <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-400">Profile settings</p>
-          <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Edit your founder profile</h1>
-          <p className="mt-2 text-slate-400">Show potential co-founders who you are and what matters to you.</p>
+          <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Edit your traveler profile</h1>
+          <p className="mt-2 text-slate-400">Show potential travel companions who you are and how you like to roam.</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -88,8 +88,8 @@ export default function EditProfilePage() {
           </section>
 
           <section className="rounded-3xl border border-slate-800 bg-slate-900 p-6 sm:p-8">
-            <div className="mb-5 flex items-center justify-between"><div><h2 className="font-semibold">Your story</h2><p className="mt-1 text-sm text-slate-500">What are you building, and what do you bring?</p></div><span className="text-xs font-medium text-slate-500">{formData.bio.length}/500</span></div>
-            <textarea className={`${inputClass} min-h-36 resize-none py-4 leading-6`} id="bio" name="bio" value={formData.bio} onChange={handleChange} required maxLength={500} placeholder="Share your background, ambitions, and what you’re looking for in a co-founder..." />
+            <div className="mb-5 flex items-center justify-between"><div><h2 className="font-semibold">Your travel story</h2><p className="mt-1 text-sm text-slate-500">Share your pace, interests, budget, and dream destinations.</p></div><span className="text-xs font-medium text-slate-500">{formData.bio.length}/500</span></div>
+            <textarea className={`${inputClass} min-h-36 resize-none py-4 leading-6`} id="bio" name="bio" value={formData.bio} onChange={handleChange} required maxLength={500} placeholder="Tell people how you like to travel, where you’re headed next, and what makes a great trip for you..." />
           </section>
 
           {error && <div role="alert" className="flex items-center gap-3 rounded-xl border border-red-500/25 bg-red-500/10 p-4 text-sm text-red-300"><AlertCircle className="h-5 w-5 shrink-0 text-red-400" />{error}</div>}

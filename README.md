@@ -1,7 +1,7 @@
-# CoLaunch
+# RoamMates
 
-CoLaunch is a platform where startup founders and builders connect to form teams.
-Built with Next.js, Supabase, and Stream, it enables real-time matching, messaging, and collaboration. Designed for entrepreneurs, developers, and creatives looking to launch something together.
+RoamMates is a platform where travelers connect around compatible destinations, dates, budgets, and travel styles.
+Built with Next.js, Supabase, and Stream, it enables real-time matching, messaging, and video calls for people looking to share their next adventure.
 
 ---
 
@@ -9,13 +9,13 @@ Built with Next.js, Supabase, and Stream, it enables real-time matching, messagi
 
 **Auth** – Secure login and profile setup
 
-**Founder Profiles** – Skills, startup ideas, interests, location
+**Traveler Profiles** – Travel style, interests, home base, and companion preferences
 
-**Connections** – Swipe-style discovery for compatible founders
+**Connections** – Swipe-style discovery for compatible travel companions
 
 **Chat** – Real-time messaging using Stream SDK
 
-**Video Calls** – Face-to-face brainstorming
+**Video Calls** – Face-to-face trip planning
 
 ---
 
@@ -25,7 +25,7 @@ Built with Next.js, Supabase, and Stream, it enables real-time matching, messagi
 
 **Supabase** – Auth, database (Postgres), storage, and realtime subscriptions
 
-**Stream** – Chat and video SDKs for collaboration
+**Stream** – Chat and video SDKs for trip planning
 
 **TailwindCSS** – Clean, responsive UI
 

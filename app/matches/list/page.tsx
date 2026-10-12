@@ -1,7 +1,6 @@
 "use client";
 
 import { UserProfile } from "@/app/profile/page";
-import PageLoader from "@/components/PageLoader";
 import { getUserMatches } from "@/lib/actions/matches";
 import { calculateAge } from "@/lib/helpers/calculate-age";
 import {
@@ -51,7 +50,7 @@ export default function MatchesListPage() {
               Connections
             </p>
             <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
-              Your founder matches
+              Your travel matches
             </h1>
             <p className="mt-2 text-slate-400">
               People where the interest—and potential—is mutual.
@@ -88,8 +87,8 @@ export default function MatchesListPage() {
               Your first match is ahead
             </h2>
             <p className="mt-3 leading-7 text-slate-400">
-              Explore founder profiles and connect with people whose skills
-              complement yours.
+              Explore traveler profiles and connect with people whose plans
+              and travel style complement yours.
             </p>
             <Link
               href="/matches"
@@ -129,7 +128,7 @@ export default function MatchesListPage() {
                     @{match.username}
                   </p>
                   <p className="mt-2 line-clamp-2 text-sm leading-5 text-slate-500">
-                    {match.bio || "Say hello and learn what they’re building."}
+                    {match.bio || "Say hello and learn where they’re headed next."}
                   </p>
                 </div>
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center self-center rounded-xl bg-slate-800 text-slate-400 transition group-hover:bg-violet-600 group-hover:text-white">

@@ -2,7 +2,6 @@
 import { useAuth } from "@/contexts/auth-context";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import {
   Compass,
@@ -11,6 +10,7 @@ import {
   UserCircle,
   LogOut,
   Menu,
+  Plane,
   X,
 } from "lucide-react";
 
@@ -38,22 +38,15 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#080b16]/95 backdrop-blur-xl">
+      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#123c38]/95 text-white backdrop-blur-xl">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
-              <div className=" rounded-xl overflow-hidden ">
-                <Image
-                  src="/colaunch_logo.png"
-                  alt=""
-                  width={1254}
-                  height={1254}
-                  className="size-10 object-cover"
-                />
+              <div className="flex size-10 items-center justify-center rounded-full bg-[#ef6f48] text-white">
+                <Plane className="h-5 w-5 -rotate-12" />
               </div>
-
-              <span className="text-2xl font-bold text-white ">CoLaunch</span>
+              <span className="text-2xl font-bold text-white">RoamMates</span>
             </Link>
 
             {/* Desktop Nav Links */}
@@ -74,7 +67,7 @@ export default function Navbar() {
                       }`}
                     >
                       {isActive && (
-                        <span className="absolute inset-0 bg-violet-500/15 rounded-xl"></span>
+                        <span className="absolute inset-0 bg-white/10 rounded-xl"></span>
                       )}
                       {!isActive && (
                         <span className="absolute inset-0 bg-white/0 group-hover:bg-white/5 rounded-xl transition-colors duration-300"></span>
@@ -83,8 +76,8 @@ export default function Navbar() {
                         <Icon
                           className={`w-4 h-4 ${
                             isActive
-                              ? "text-violet-400"
-                              : "text-gray-500 group-hover:text-blue-400"
+                              ? "text-[#ff9d78]"
+                              : "text-white/45 group-hover:text-[#9bc8c1]"
                           } transition-colors`}
                         />
                         <span>{item.label}</span>
@@ -108,7 +101,7 @@ export default function Navbar() {
               ) : (
                 <a
                   href="/auth"
-                  className="group relative inline-flex items-center px-5 py-2.5 md:px-8 md:py-3 bg-violet-600 text-white text-sm font-bold rounded-xl overflow-hidden transition-all duration-300 hover:bg-violet-500"
+                  className="group relative inline-flex items-center overflow-hidden rounded-full bg-[#ef6f48] px-5 py-2.5 text-sm font-bold text-white transition-all duration-300 hover:bg-[#df5f3a] md:px-8 md:py-3"
                 >
                   <span className="relative z-10 flex items-center">
                     Sign In
@@ -153,7 +146,7 @@ export default function Navbar() {
               mobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
             }`}
           >
-            <div className="px-6 py-4 space-y-2 border-t border-slate-800 bg-[#080b16]">
+            <div className="space-y-2 border-t border-white/10 bg-[#123c38] px-6 py-4">
               {navItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = firstSegment === item.id;
@@ -165,12 +158,12 @@ export default function Navbar() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 ${
                       isActive
-                        ? "bg-violet-500/15 text-white"
+                        ? "bg-white/10 text-white"
                         : "text-gray-400 hover:text-white hover:bg-white/5"
                     }`}
                   >
                     <Icon
-                      className={`w-5 h-5 ${isActive ? "text-violet-400" : ""}`}
+                      className={`w-5 h-5 ${isActive ? "text-[#ff9d78]" : ""}`}
                     />
                     <span className="font-semibold">{item.label}</span>
                   </a>

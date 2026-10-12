@@ -47,9 +47,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CoLaunch",
+  title: "RoamMates — Find your travel people",
   description:
-    "Meet ambitious builders with complementary skills and find the right co-founder for your next company.",
+    "Meet compatible travelers heading your way and turn your next trip into a shared adventure.",
 };
 
 export default function RootLayout({

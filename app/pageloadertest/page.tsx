@@ -4,7 +4,7 @@ export default function PageLoaderTest() {
   return (
     <PageLoader
       message="Finding your best matches"
-      description="Comparing skills, goals, and working styles."
+      description="Comparing destinations, pace, and travel styles."
     />
   );
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import PageLoader from "@/components/PageLoader";
 import { calculateAge } from "@/lib/helpers/calculate-age";
 import { getCurrentUserProfile } from "@/lib/actions/profile";
 import {
@@ -113,13 +112,13 @@ export default function ProfilePage() {
         <div className="mb-8 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-400">
-              Founder profile
+              Traveler profile
             </p>
             <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
-              Your CoLaunch identity
+              Your RoamMates passport
             </h1>
             <p className="mt-2 text-slate-400">
-              Keep your story clear so the right builders can find you.
+              Help compatible travelers understand how you like to explore.
             </p>
           </div>
           <Link
@@ -197,7 +196,7 @@ export default function ProfilePage() {
               </div>
               <p className="mt-5 whitespace-pre-wrap leading-8 text-slate-300">
                 {profile.bio ||
-                  "Add a bio to tell potential co-founders what you’re building and what you bring to the table."}
+                  "Add a bio about your travel style, favorite adventures, and where you hope to go next."}
               </p>
             </section>
 
@@ -225,7 +224,7 @@ export default function ProfilePage() {
           <aside className="space-y-6">
             <section className="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-violet-400">
-                Matching preferences
+                Companion preferences
               </p>
               <div className="mt-5 space-y-3">
                 <Detail
@@ -239,7 +238,7 @@ export default function ProfilePage() {
                 />
                 <Detail
                   icon={Ruler}
-                  label="Search distance"
+                  label="Home-base radius"
                   value={
                     preferences
                       ? `Within ${preferences.distance} km`
@@ -259,7 +258,7 @@ export default function ProfilePage() {
             >
               <div>
                 <p className="text-sm text-blue-100">Ready to connect?</p>
-                <p className="mt-1 font-semibold">Discover founders</p>
+                <p className="mt-1 font-semibold">Discover travelers</p>
               </div>
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
